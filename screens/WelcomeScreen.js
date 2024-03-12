@@ -38,7 +38,8 @@ const welcomestyles = StyleSheet.create({
     alignSelf:'center',
     fontSize:32,
     marginTop:50,
-    fontWeight:"bold"
+    fontWeight:"bold",
+    textAlign:'center'
   },
   button:{
     alignSelf:'center',
