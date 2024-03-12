@@ -2,7 +2,6 @@ import * as React from 'react';
 import { View, Image, Pressable, Text, StyleSheet } from 'react-native';
 
 const WelcomeScreen = ({ navigation }) => {
-  // Add welcome screen code here.
   return (
     <View style={welcomestyles.container}>
       <Image 
@@ -11,7 +10,8 @@ const WelcomeScreen = ({ navigation }) => {
       <Text style={welcomestyles.welcometext}>
         Little lemon your local Mediterranean Bistro
       </Text>
-      <Pressable style={welcomestyles.button}>
+      <Pressable style={welcomestyles.button}
+      onPress={()=>navigation.navigate('Subscribe')}>
         <Text style={welcomestyles.buttontxt}>
           Newsletter
         </Text>
