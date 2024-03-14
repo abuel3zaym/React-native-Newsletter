@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { validateEmail } from '../utils';
 
 const alertmsg = ()=> Alert.alert('Subscribed','Thank you stay tuned!',[{text:'Dismiss'}])
-
+const alertmsg2 = ()=> Alert.alert('Error','This is not an email',[{text:'Dismiss'}])
 const SubscribeScreen = () => {
   const [showemail, setshowemail]=useState('');
 
@@ -25,7 +25,7 @@ const SubscribeScreen = () => {
       keyboardAppearance='dark'
       />
       <Pressable 
-      onPress={alertmsg}
+      onPress={showemail.includes('@')?alertmsg:alertmsg2}
       style={showemail===''?substyles.buttondisabled:substyles.button}
       disabled={showemail===''?true:false}>
         <Text style={substyles.buttontxt}>Subscribe</Text>
