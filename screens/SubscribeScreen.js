@@ -1,14 +1,12 @@
 import * as React from 'react';
 import { View, Image, TextInput, StyleSheet, Text,Pressable, Alert} from 'react-native';
 import { useState } from 'react';
-import validator from 'validator';
-import isEmail from 'validator/lib/isEmail';
 import { validateEmail } from '../utils';
 
 const alertmsg = ()=> Alert.alert('Subscribed','Thank you stay tuned!',[{text:'Dismiss'}])
 
 const SubscribeScreen = () => {
-  const [showemail, setshowemail]=useState();
+  const [showemail, setshowemail]=useState('');
 
   
   return(
@@ -28,7 +26,8 @@ const SubscribeScreen = () => {
       />
       <Pressable 
       onPress={alertmsg}
-      style={substyles.button}>
+      style={showemail===''?substyles.buttondisabled:substyles.button}
+      disabled={showemail===''?true:false}>
         <Text style={substyles.buttontxt}>Subscribe</Text>
       </Pressable>
     </View>
@@ -78,6 +77,17 @@ const substyles=StyleSheet.create({
     alignContent:'center',
     justifyContent:'center',
 
+  },
+  buttondisabled:{
+    marginTop:15,
+    width:380,
+    height:40,
+    alignSelf:'center',
+    backgroundColor:'olive',
+    borderRadius:5,
+    alignContent:'center',
+    justifyContent:'center',
+    opacity:.5
   },
   buttontxt:{
     alignSelf:'center',
