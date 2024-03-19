@@ -11,6 +11,12 @@ const WelcomeScreen = ({ navigation }) => {
         Little lemon your local Mediterranean Bistro
       </Text>
       <Pressable style={welcomestyles.button}
+      onPress={()=>navigation.navigate('Menu')}>
+        <Text style={welcomestyles.buttontxt}>
+          Menu
+        </Text>
+      </Pressable>
+      <Pressable style={welcomestyles.button}
       onPress={()=>navigation.navigate('Subscribe')}>
         <Text style={welcomestyles.buttontxt}>
           Newsletter
@@ -42,15 +48,17 @@ const welcomestyles = StyleSheet.create({
     textAlign:'center'
   },
   button:{
+    display:'flex',
     alignSelf:'center',
     backgroundColor:'olive',
-    paddingHorizontal:100,
+    width:300,
     paddingVertical:10,
     borderRadius:8,
-    marginTop:50
+    marginTop:30,
   },
   buttontxt:{
     fontSize:20,
-    color:'white'
+    color:'white',
+    alignSelf:'center'
   }
 })
