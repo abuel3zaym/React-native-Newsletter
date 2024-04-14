@@ -2,6 +2,7 @@ import * as React from 'react';
 import { View, Image, TextInput, StyleSheet, Text,Pressable, Alert} from 'react-native';
 import { useState } from 'react';
 import { validateEmail } from '../utils';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const alertmsg = ()=> Alert.alert('Subscribed','Thank you stay tuned!',[{text:'Dismiss'}])
 const alertmsg2 = ()=> Alert.alert('Error','This is not an email',[{text:'Dismiss'}])
